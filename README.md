@@ -7,14 +7,6 @@ development](https://img.shields.io/badge/status-development-blue)
 
 Some working functions are provided in the R programming language flow and the VS Code editor. You can check vs code editor version, extensions, and other utilities.
 
-# Installation
-
-``` r
-remotes::install_github("brunofariadf/vscoder")
-```
-
-# Platform
-
 <div align="center">
 
 |platform | available |
@@ -25,6 +17,12 @@ remotes::install_github("brunofariadf/vscoder")
 
 </div>
 
+# Installation
+
+``` r
+remotes::install_github("brunofariadf/vscoder")
+```
+
 # Code of Conduct
 
 Please note that the project is released with a [Contributor
@@ -33,4 +31,4 @@ Conduct](https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html). By 
 
 # License
 
-MIT
+[MIT](https://github.com/brunofariadf/vscoder/blob/main/LICENSE.md)
