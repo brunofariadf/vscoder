@@ -1,0 +1,19 @@
+Package: vscoder
+Title: Working tool for R and VS Code
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Bruno",
+           family = "Faria",
+           role = c("aut", "cre"),
+           email = "brunofariadf@gmail.com",
+           comment = c(ORCID = "0000-0002-1612-3991"))
+Description: Some working functions are provided in the R programming language flow and the VS Code editor. You can check vs code editor version, extensions, and other utilities.
+Depends:
+    R (>= 4.1.0)
+Imports: 
+    jsonlite
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
