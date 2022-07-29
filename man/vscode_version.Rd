@@ -13,5 +13,6 @@ character class vector that indicates the vscode version.
 Get the vscode version.
 }
 \examples{
-vscode_version()
+# default
+# vscode_version()
 }

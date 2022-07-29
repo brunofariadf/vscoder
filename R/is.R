@@ -16,3 +16,8 @@
     p_i <- .Platform[["OS.type"]]
     if (p_i == "windows" & length(p_i) >= 1) TRUE else FALSE
 }
+
+.is_unix <- function() {
+    x_i <- .Platform[["OS.type"]]
+    if (x_i == "unix") TRUE else FALSE
+}

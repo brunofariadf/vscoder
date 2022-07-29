@@ -1,0 +1,27 @@
+---
+output: md_document
+---
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+.path_version <- "news.csv"
+```
+
+# vscoder `r .count_version(.path_version, "2022-07-28")`
+
+## Note from version
+
+### > vscoder (development)
+
+- development
+
+### > vscoder `r .count_version(.path_version, "2022-07-28")`
+
+- Added function `exists_vscode()` to search installed editor.
+- `vscode_extension()` received two arguments: type, a character class vector that indicates 'basic' or 'extended' information about installed extension; and 'format', a logical class vector that indicates whether the return of the function should have abbreviated lines.
+- Internal package improvements.
+    - The internal error system of the package has been redone for the purpose of maintaining long-term code.
+    - The package's internal version control system has been automated for the purpose of maintaining long-term code.
+
+### > vscoder `r .count_version(.path_version, "start")` (2022-07-22)
+
+- Start of the package.

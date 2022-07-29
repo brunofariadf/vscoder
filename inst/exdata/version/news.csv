@@ -1,0 +1,6 @@
+date,version,type,modify
+2022-07-22,0,start,start
+2022-07-28,0,minor,Added function `exists_vscode()` to search installed editor.
+2022-07-28,0,minor,"`vscode_extension()` received two arguments: type, a character class vector that indicates 'basic' or 'extended' information about installed extension; and 'format', a logical class vector that indicates whether the return of the function should have abbreviated lines."
+2022-07-28,0,patch,The internal error system of the package has been redone for the purpose of maintaining long-term code.
+2022-07-28,0,patch,The package's internal version control system has been automated for the purpose of maintaining long-term code.

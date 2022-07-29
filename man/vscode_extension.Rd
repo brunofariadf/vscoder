@@ -4,7 +4,12 @@
 \alias{vscode_extension}
 \title{VS Code Extension}
 \usage{
-vscode_extension()
+vscode_extension(type = "basic", format = TRUE)
+}
+\arguments{
+\item{type}{character class vector that indicates the extension search type with option 'basic' and 'info'.}
+
+\item{format}{logical class vector that indicates if must be the column formated with option 'TRUE' or 'FALSE'.}
 }
 \value{
 object of the data frame class that gets the vscode extension.
@@ -13,5 +18,7 @@ object of the data frame class that gets the vscode extension.
 Get the vscode extension.
 }
 \examples{
-vscode_extension()
+# default
+# vscode_extension()
+# vscode_extension(type = "info")
 }

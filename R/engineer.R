@@ -34,6 +34,17 @@
 ## engineer - date: 2022-07-21 22:41:08
 ## --------------------------------------------------------------------------------
 
+# get vscode
+# not export
+
+.get_exists_vscode <- function() {
+    if (.is_windows()) {
+        x_i <- shell("where code", intern = TRUE)
+        x_i <- file.exists(x_i)
+        is.element(TRUE, x_i)
+    }
+}
+
 # get version
 # not export
 
@@ -48,16 +59,34 @@
 # get extension
 # not export
 
-.get_extension <- function() {
+.get_extension <- function(type, format) {
     if (.is_windows()) {
-        data.frame(
-            id = .get_id(),
-            version = .get_id_version()
-        )
+        if (type == "basic") {
+            data.frame(
+                id = .get_id(),
+                version = .get_id_version()
+            )
+        } else if (type == "info") {
+            path_i <- .get_path_extension_package(.get_id())
+            name_i <- basename(dirname(path_i))
+            df_i <- lapply(path_i, 
+                function(x)tryCatch(.df_list(jsonlite::fromJSON(x)),
+                    error = function(i).df_list_error(x)))
+            df_i <- if (isTRUE(format)) lapply(df_i, .format_character_length) else df_i
+            df_i <- do.call(rbind, df_i)
+            data.frame(
+                id = if (isTRUE(format)) .format_character_length(name_i) else name_i, 
+                df_i)
+        }
     }
 }
 
-# .get_extension()
+# .get_extension("basic", TRUE)
+# .get_extension("info", TRUE)
+
+# nrow(.get_extension("basic"))
+# length(.get_id())
+# length(.get_path_extension_package())
 
 # get extension path
 # not export
@@ -69,7 +98,16 @@
 
 # .get_path_extension("hediet.vscode-drawio")
 
-# reditorsupport.r
+.get_path_extension_package <- function(extension) {
+    pkg_i <- paste0("package", ".", "json")
+    # filter_i <- gsub("\\, ", "|", toString(extension))
+    path_i <- unlist(lapply(extension, path_extension))
+    suppressWarnings(normalizePath(file.path(path_i, pkg_i)))
+    # Filter(function(x)grepl(x, pattern = filter_i), path_i)
+}
+
+# .get_id()
+# .get_path_extension_package(.get_id())
 
 ## ------------------------------------------
 ## engineer utils
@@ -116,3 +154,24 @@
 }
 
 # .list_extension_path()
+
+# select df to extension
+# not export
+
+.df_list <- function(data) {
+    data.frame(
+        version = data[["version"]],
+        license = data[["license"]],
+        publisher = data[["__metadata"]][["publisherDisplayName"]],
+        description = data[["description"]]
+    )
+}
+
+.df_list_error <- function(data) {
+    data.frame(
+        version = NA,
+        license = NA,
+        publisher = NA,
+        description = NA
+    )
+}
