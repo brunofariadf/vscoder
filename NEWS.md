@@ -1,10 +1,17 @@
-# vscoder 0.2.2.9000 (2022-07-28)
+# vscoder 0.2.4.9000 (2022-07-31)
 
 ## Note from version
 
 ### &gt; vscoder (development)
 
 -   development
+
+### &gt; vscoder 0.2.4.9000 (2022-07-31)
+
+-   Internal package improvements.
+    -   `vscode_extension()` aplication correct from format argument to
+        ‘basic’ type argument.
+    -   Removed the old error system.
 
 ### &gt; vscoder 0.2.2.9000 (2022-07-28)
 

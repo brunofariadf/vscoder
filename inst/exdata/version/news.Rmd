@@ -6,13 +6,19 @@ output: md_document
 .path_version <- "news.csv"
 ```
 
-# vscoder `r .count_version(.path_version, "2022-07-28")`
+# vscoder `r .count_version(.path_version, "2022-07-31")`
 
 ## Note from version
 
 ### > vscoder (development)
 
 - development
+
+### > vscoder `r .count_version(.path_version, "2022-07-31")`
+
+- Internal package improvements.
+    - `vscode_extension()` aplication correct from format argument to 'basic' type argument.
+    - Removed the old error system.
 
 ### > vscoder `r .count_version(.path_version, "2022-07-28")`
 

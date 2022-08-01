@@ -9,31 +9,6 @@
 ## Platform: windows (10.0.14393)
 ## ------------------------------------------
 
-## --------------------------------------------------------------------------------
-## check - date: 2022-07-21 23:04:58
-## --------------------------------------------------------------------------------
-
-.error <- function(type) {
-    .error_platform <- function() {
-        p_i <- .Platform[["OS.type"]]
-        paste0("Method not applied to the ", p_i, " platform.")
-    }
-
-    .error_character <- function() {
-        paste0("must be character class vector.")
-    }
-
-    if (type == "platform") {
-        .error_platform()
-    } else if (type == "character") {
-        .error_character()
-    }
-}
-
-## --------------------------------------------------------------------------------
-## engineer - date: 2022-07-21 22:41:08
-## --------------------------------------------------------------------------------
-
 # get vscode
 # not export
 
@@ -54,18 +29,17 @@
     }
 }
 
-# .get_version()
-
 # get extension
 # not export
 
 .get_extension <- function(type, format) {
     if (.is_windows()) {
         if (type == "basic") {
-            data.frame(
-                id = .get_id(),
-                version = .get_id_version()
-            )
+            id_i <- .get_id()
+            version_i <- .get_id_version()
+            id_i <- if (isTRUE(format)) .format_character_length(id_i) else id_i
+            version_i <- if (isTRUE(format)) .format_character_length(version_i) else version_i
+            data.frame(id = id_i, version = version_i)
         } else if (type == "info") {
             path_i <- .get_path_extension_package(.get_id())
             name_i <- basename(dirname(path_i))
@@ -74,19 +48,11 @@
                     error = function(i).df_list_error(x)))
             df_i <- if (isTRUE(format)) lapply(df_i, .format_character_length) else df_i
             df_i <- do.call(rbind, df_i)
-            data.frame(
-                id = if (isTRUE(format)) .format_character_length(name_i) else name_i, 
-                df_i)
+            id_i <- if (isTRUE(format)) .format_character_length(name_i) else name_i
+            data.frame(id = id_i, df_i)
         }
     }
 }
-
-# .get_extension("basic", TRUE)
-# .get_extension("info", TRUE)
-
-# nrow(.get_extension("basic"))
-# length(.get_id())
-# length(.get_path_extension_package())
 
 # get extension path
 # not export
@@ -96,18 +62,11 @@
     Filter(function(x)grepl(x, pattern = extension), path_i)
 }
 
-# .get_path_extension("hediet.vscode-drawio")
-
 .get_path_extension_package <- function(extension) {
     pkg_i <- paste0("package", ".", "json")
-    # filter_i <- gsub("\\, ", "|", toString(extension))
     path_i <- unlist(lapply(extension, path_extension))
     suppressWarnings(normalizePath(file.path(path_i, pkg_i)))
-    # Filter(function(x)grepl(x, pattern = filter_i), path_i)
 }
-
-# .get_id()
-# .get_path_extension_package(.get_id())
 
 ## ------------------------------------------
 ## engineer utils
@@ -134,8 +93,6 @@
     }
 }
 
-# .get_id_version()
-
 # list extension path
 # not export
 
@@ -152,8 +109,6 @@
         unique(list_i)
     }
 }
-
-# .list_extension_path()
 
 # select df to extension
 # not export
