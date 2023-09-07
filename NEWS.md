@@ -1,10 +1,15 @@
-# vscoder 0.2.4.9000 (2022-07-31)
+# vscoder 0.2.6.9000 (2023-09-07)
 
 ## Note from version
 
 ### &gt; vscoder (development)
 
 -   development
+
+### &gt; vscoder 0.2.6.9000 (2023-09-07)
+
+- Fix for error message if VS Code editor is not installed.
+- Correction for documentation of the functions.
 
 ### &gt; vscoder 0.2.4.9000 (2022-07-31)
 

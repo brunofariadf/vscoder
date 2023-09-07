@@ -29,6 +29,10 @@
         stop(.error("platform", NULL))
     }
 
+    if (!exists_vscode()) {
+        stop(.error("code", NULL))
+    }
+
     .get_version()
 }
 
@@ -38,6 +42,10 @@
 .check_vscode_extension <- function(type, format) {
     if (!.is_windows()) {
         stop(.error("platform", NULL))
+    }
+
+    if (!exists_vscode()) {
+        stop(.error("code", NULL))
     }
 
     if (!is.character(type)) {
@@ -65,6 +73,10 @@
 .check_path_extension <- function(extension) {
     if (!.is_windows()) {
         stop(.error("platform", NULL))
+    }
+
+    if (!exists_vscode()) {
+        stop(.error("code", NULL))
     }
 
     if (!is.character(extension)) {

@@ -42,6 +42,20 @@
   unlist(lapply(x, execute_i))
 }
 
+# format system
+# not export
+
+.shell <- function(cmd) {
+  obj_i <- suppressWarnings(shell(cmd, 
+    intern = TRUE,
+    ignore.stderr = TRUE))
+  if (length(obj_i) >= 1) {
+    return(obj_i)
+  } else {
+    return(NA)
+  }
+}
+
 # check version
 # not export
 

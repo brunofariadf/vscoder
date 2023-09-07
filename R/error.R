@@ -17,6 +17,10 @@
     paste0("Method not applied to the ", p_i, " platform.")
 }
 
+.error_code <- function() {
+    paste0("The vs-code installation was not found.")
+}
+
 .error_character <- function(insert) {
     paste0("'", insert, "' must be character class vector.")
 }
@@ -40,6 +44,7 @@
 .error <- function(type, insert) {
     switch(type,
         "platform" = .error_platform(insert),
+        "code" = .error_code(),
         "character" = .error_character(insert),
         "logical" = .error_logical(insert),
         "type_extension" = .error_type_extension(insert),

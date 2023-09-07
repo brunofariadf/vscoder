@@ -11,10 +11,10 @@
 
 #' Check the VS Code Editor
 #'
-#' Check if exists the VS Code Editor.
+#' Check if the VS Code editor exists.
 #'
 #' @usage exists_vscode()
-#' @return logical class vector that indicates if exists editor VS Code.
+#' @return The logical class vector indicates if VS Code editor exists.
 #' @export 
 #' @examples
 #' # default
@@ -26,10 +26,10 @@ exists_vscode <- function() {
 
 #' VS Code Version
 #'
-#' Get the vscode version.
+#' Get the VS Code editor version.
 #'
 #' @usage vscode_version()
-#' @return character class vector that indicates the vscode version.
+#' @return character class vector that indicates the version of the VS Code editor.
 #' @export 
 #' @examples
 #' # default
@@ -41,12 +41,12 @@ vscode_version <- function() {
 
 #' VS Code Extension
 #'
-#' Get the vscode extension.
+#' Get the extension that was installed in the VS Code editor.
 #'
 #' @usage vscode_extension(type = "basic", format = TRUE)
-#' @param type character class vector that indicates the extension search type with option 'basic' and 'info'.
-#' @param format logical class vector that indicates if must be the column formated with option 'TRUE' or 'FALSE'.
-#' @return object of the data frame class that gets the vscode extension.
+#' @param type character class vector that indicates the type of search to get the extension with options 'basic' and 'info'.
+#' @param format logical class vector that indicates whether the column should be formatted with 'TRUE' or 'FALSE' option.
+#' @return The object of the dataframe class with information from the VS Code editor extension.
 #' @export 
 #' @examples
 #' # default
@@ -59,11 +59,11 @@ vscode_extension <- function(type = "basic", format = TRUE) {
 
 #' VS Code Extension Path
 #'
-#' Get the path of the vscode extension.
+#' Get the VS Code editor extension path.
 #'
 #' @usage path_extension(extension)
-#' @param extension character class vector that indicates the extension id.
-#' @return character class vector that indicates the vscode extension path.
+#' @param extension character class vector that indicates the id of the extension.
+#' @return dataframe class object with VS Code editor extension path information.
 #' @export 
 #' @examples
 #' path_extension("reditorsupport.r")

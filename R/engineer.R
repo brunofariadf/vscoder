@@ -14,9 +14,13 @@
 
 .get_exists_vscode <- function() {
     if (.is_windows()) {
-        x_i <- shell("where code", intern = TRUE)
-        x_i <- file.exists(x_i)
-        is.element(TRUE, x_i)
+        x_i <- .shell("where code")
+        if (!anyNA(x_i)) {
+            x_i <- file.exists(x_i)
+            is.element(TRUE, x_i)
+        } else {
+            return(FALSE)
+        }
     }
 }
 
@@ -25,7 +29,7 @@
 
 .get_version <- function() {
     if (.is_windows()) {
-        shell("code --version", intern = TRUE)[1]
+        .shell("code --version")[1]
     }
 }
 
@@ -77,7 +81,7 @@
 
 .get_id <- function() {
     if (.is_windows()) {
-        id_i <- shell("code --list-extensions", intern = TRUE)
+        id_i <- .shell("code --list-extensions")
         tolower(id_i)
     }
 }
@@ -87,7 +91,7 @@
 
 .get_id_version <- function() {
     if (.is_windows()) {
-        ext_ver <- shell("code --list-extensions --show-versions", intern = TRUE)
+        ext_ver <- .shell("code --list-extensions --show-versions")
         ext_ver <- strsplit(ext_ver, split = "@")
         as.vector(unlist(lapply(ext_ver, function(x)x[2])))
     }
