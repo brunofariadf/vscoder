@@ -7,15 +7,15 @@
 vscode_extension(type = "basic", format = TRUE)
 }
 \arguments{
-\item{type}{character class vector that indicates the extension search type with option 'basic' and 'info'.}
+\item{type}{character class vector that indicates the type of search to get the extension with options 'basic' and 'info'.}
 
-\item{format}{logical class vector that indicates if must be the column formated with option 'TRUE' or 'FALSE'.}
+\item{format}{logical class vector that indicates whether the column should be formatted with 'TRUE' or 'FALSE' option.}
 }
 \value{
-object of the data frame class that gets the vscode extension.
+The object of the dataframe class with information from the VS Code editor extension.
 }
 \description{
-Get the vscode extension.
+Get the extension that was installed in the VS Code editor.
 }
 \examples{
 # default

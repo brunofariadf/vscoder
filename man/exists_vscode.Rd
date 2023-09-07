@@ -7,10 +7,10 @@
 exists_vscode()
 }
 \value{
-logical class vector that indicates if exists editor VS Code.
+The logical class vector indicates if VS Code editor exists.
 }
 \description{
-Check if exists the VS Code Editor.
+Check if the VS Code editor exists.
 }
 \examples{
 # default

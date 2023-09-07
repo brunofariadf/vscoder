@@ -7,10 +7,10 @@
 vscode_version()
 }
 \value{
-character class vector that indicates the vscode version.
+character class vector that indicates the version of the VS Code editor.
 }
 \description{
-Get the vscode version.
+Get the VS Code editor version.
 }
 \examples{
 # default

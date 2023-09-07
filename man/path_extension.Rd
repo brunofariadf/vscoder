@@ -7,13 +7,13 @@
 path_extension(extension)
 }
 \arguments{
-\item{extension}{character class vector that indicates the extension id.}
+\item{extension}{character class vector that indicates the id of the extension.}
 }
 \value{
-character class vector that indicates the vscode extension path.
+dataframe class object with VS Code editor extension path information.
 }
 \description{
-Get the path of the vscode extension.
+Get the VS Code editor extension path.
 }
 \examples{
 path_extension("reditorsupport.r")
