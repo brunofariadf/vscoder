@@ -1,6 +1,6 @@
 Package: vscoder
 Title: Work tool for R language and VS Code editor
-Version: 0.2.4.9000
+Version: 0.2.6.9000
 Authors@R: 
     person(given = "Bruno",
            family = "Faria",
